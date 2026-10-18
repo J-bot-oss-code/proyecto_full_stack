@@ -1,0 +1,336 @@
+/* =========================================
+   VARIABLES Y RESETEO BÁSICO
+========================================= */
+:root {
+    --bg-color: #0f172a; /* Color de fondo oscuro principal */
+    --card-bg: #1e293b;  /* Color un poco más claro para elementos */
+    --text-primary: #f8fafc; /* Texto blanco principal */
+    --text-secondary: #94a3b8; /* Texto grisáceo para descripciones */
+    --accent-blue: #3b82f6; /* Azul de los botones */
+    --border-color: #334155; /* Líneas divisorias sutiles */
+}
+
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+    font-family: 'Segoe UI', Roboto, Helvetica, Arial, sans-serif;
+}
+
+body {
+    background-color: var(--bg-color);
+    color: var(--text-primary);
+}
+
+/* =========================================
+   1. BARRA DE NAVEGACIÓN
+========================================= */
+.navbar {
+    display: flex;
+    justify-content: space-between; /* Separa el logo, menú y perfil */
+    align-items: center; /* Los centra verticalmente */
+    padding: 20px 5%;
+    background-color: var(--bg-color);
+    border-bottom: 1px solid var(--border-color);
+}
+
+
+
+.logo-img {
+   max-width: 100%;
+    height: auto;
+    display: block;
+    width: 150px;
+    margin-right: 20px; /* Espacio entre el logo y los enlaces de navegación */
+    border-radius: 8px; /* Bordes redondeados para el logo */
+}
+
+.nav-links {
+    list-style: none;
+    display: flex;
+    gap: 30px;
+}
+
+.nav-links a {
+    text-decoration: none;
+    color: var(--text-secondary);
+    font-weight: 500;
+    transition: color 0.3s ease;
+}
+
+.nav-links a:hover, .nav-links a.active {
+    color: var(--text-primary);
+}
+
+.avatar {
+    width: 40px;
+    height: 40px;
+    border-radius: 50%; /* Hace la imagen redonda */
+    object-fit: cover;
+}
+
+/* =========================================
+   2. SECCIÓN DE BÚSQUEDA Y FILTROS
+========================================= */
+.search-page {
+    max-width: 1000px; /* Evita que la página se estire demasiado en pantallas grandes */
+    margin: 0 auto;
+    padding: 40px 20px;
+}
+
+.hero-search {
+    text-align: center;
+    margin-bottom: 50px;
+}
+
+.hero-search h1 {
+    font-size: 2.5rem;
+    margin-bottom: 10px;
+}
+
+.hero-search p {
+    color: var(--text-secondary);
+    margin-bottom: 30px;
+}
+
+/* Barra de búsqueda */
+.search-input-container {
+    display: flex;
+    align-items: center;
+    background-color: var(--card-bg);
+    padding: 15px 20px;
+    border-radius: 8px;
+    margin-bottom: 20px;
+}
+
+.search-input-container input {
+    background: transparent;
+    border: none;
+    color: var(--text-primary);
+    width: 100%;
+    margin-left: 10px;
+    font-size: 1rem;
+    outline: none; /* Quita el borde azul feo al hacer clic */
+}
+/* Botón de búsqueda debe estar dentro de el input a la derecha para que se vea bien  */
+.search-button {
+    text-align: right;
+    margin-bottom: 20px;
+    background-color: var(--accent-blue);
+    padding: 8px 15px;
+    border-radius: 6px;
+
+    &:hover {
+        background-color: #2563eb; /* Un azul un poco más oscuro al pasar el mouse */
+    }
+    &:focus {
+        outline: none; /* Quita el borde azul feo al hacer clic */
+    }
+    &:active {
+        background-color: #1e40af; /* Azul aún más oscuro al hacer clic */
+        transform: scale(0.98); /* Efecto de "presionar" el botón */
+    }
+
+}
+
+/* Filtros desplegables */
+.filtro-container {
+    display: flex;
+    justify-content: center;
+    gap: 15px;
+    flex-wrap: wrap; /* Si la pantalla es pequeña, se acomodan abajo */
+}
+
+.filtro-container select {
+    background-color: var(--card-bg);
+    color: var(--text-primary);
+    border: none;
+    padding: 10px 15px;
+    border-radius: 6px;
+    outline: none;
+    cursor: pointer;
+}
+
+/* =========================================
+   3. RESULTADOS DE BÚSQUEDA
+========================================= */
+.results-section h2 {
+    font-size: 1.5rem;
+    margin-bottom: 20px;
+    border-bottom: 1px solid var(--border-color);
+    padding-bottom: 15px;
+}
+
+.job-card {
+    display: flex;
+    justify-content: space-between; /* Separa la info del botón */
+    align-items: center;
+    padding: 25px 0;
+    border-bottom: 1px solid var(--border-color);
+}
+
+.job-info {
+    max-width: 80%; /* Para que el texto no empuje el botón */
+}
+
+.job-info h3 {
+    font-size: 1.2rem;
+    margin-bottom: 5px;
+}
+
+.company-location {
+    font-size: 0.9rem;
+    color: var(--text-secondary);
+    margin-bottom: 10px;
+}
+
+.job-description {
+    font-size: 0.95rem;
+    color: var(--text-secondary);
+    line-height: 1.5; /* Mejora la lectura del párrafo */
+}
+
+.btn-apply {
+    background-color: var(--accent-blue);
+    color: white;
+    border: none;
+    padding: 10px 25px;
+    border-radius: 6px;
+    font-weight: bold;
+    cursor: pointer;
+    transition: background-color 0.3s;
+}
+
+.btn-apply:hover {
+    background-color: #2563eb; /* Un azul un poco más oscuro al pasar el mouse */
+}
+
+/* =========================================
+   4. PAGINACIÓN
+========================================= */
+.pagination {
+    display: flex;
+    justify-content: center;
+    gap: 10px;
+    margin-top: 40px;
+}
+
+.page-btn {
+    background-color: transparent;
+    color: var(--text-secondary);
+    border: none;
+    padding: 8px 12px;
+    border-radius: 4px;
+    cursor: pointer;
+    font-weight: bold;
+}
+
+.page-btn:hover {
+    color: var(--text-primary);
+}
+
+.page-btn.active {
+    background-color: var(--accent-blue);
+    color: white;
+}
+/* =========================================
+   5. FOOTER
+   ========================================= */
+.footer {
+    background-color: var(--card-bg);
+    color: var(--text-secondary);
+    text-align: center;
+    padding: 20px 0;
+    margin-top: 40px;
+}
+
+@media (max-width: 768px) {
+    .navbar {
+        padding: 15px 2%;
+    }
+    
+    .logo {
+        width: 100px;
+        margin-right: 10px;
+    }
+    
+    .nav-links {
+        gap: 15px;
+    }
+    
+    .nav-links a {
+        font-size: 0.9rem;
+    }
+    
+    .search-page {
+        padding: 20px 15px;
+    }
+    
+    .hero-search h1 {
+        font-size: 2rem;
+    }
+    
+    .hero-search p {
+        font-size: 0.95rem;
+    }
+    
+    .search-input-container {
+        flex-direction: column;
+        padding: 15px;
+        gap: 10px;
+    }
+    
+    .search-input-container input {
+        width: 100%;
+    }
+    
+    .search-button {
+        width: 100%;
+        margin-bottom: 0;
+    }
+    
+    .filtro-container {
+        gap: 10px;
+    }
+    
+    .filtro-container select {
+        flex: 1;
+        min-width: 120px;
+    }
+    
+    .job-card {
+        flex-direction: column;
+        padding: 20px 0;
+    }
+    
+    .job-info {
+        max-width: 100%;
+        text-align: center;
+    }
+    
+    .job-info h3 {
+        font-size: 1.1rem;
+    }
+    
+    .company-location {
+        font-size: 0.85rem;
+    }
+    
+    .job-description {
+        font-size: 0.85rem;
+    }
+    
+    .btn-apply {
+        width: 100%;
+        padding: 10px;
+    }
+    
+    .pagination {
+        gap: 5px;
+    }
+    
+    .page-btn {
+        padding: 6px 8px;
+        font-size: 0.8rem;
+    }
+}
