@@ -201,6 +201,14 @@ body {
     transition: background-color 0.3s;
 }
 
+.btn-apply{
+    background: #09f;
+    &.is-applied{
+        background: #4caf50;
+        pointer-events: none;
+    }
+}
+
 .btn-apply:hover {
     background-color: #2563eb; /* Un azul un poco más oscuro al pasar el mouse */
 }
@@ -247,6 +255,203 @@ body {
 @media (max-width: 768px) {
     .navbar {
         padding: 15px 2%;
+    }
+
+    /* Ajustes para que la marca, los filtros y los resultados sean claros y accesibles. */
+    .brand {
+        display: inline-flex;
+        align-items: center;
+        gap: 9px;
+        color: var(--text-primary);
+        font-size: 1.15rem;
+        font-weight: 700;
+        text-decoration: none;
+    }
+
+    .brand-icon {
+        display: grid;
+        width: 32px;
+        height: 32px;
+        place-items: center;
+        border-radius: 8px;
+        background: var(--accent-blue);
+    }
+
+    .search-page {
+        max-width: 1120px;
+    }
+
+    .search-input-container {
+        gap: 12px;
+    }
+
+    .search-input-container input {
+        min-width: 0;
+        margin-left: 0;
+    }
+
+    .search-input-container input::placeholder {
+        color: var(--text-secondary);
+    }
+
+    .search-button {
+        flex: 0 0 auto;
+        margin: 0;
+        border: 0;
+        color: white;
+        font-weight: 600;
+        cursor: pointer;
+    }
+
+    .search-button:hover {
+        background-color: #2563eb;
+    }
+
+    .filtro-container {
+        display: grid;
+        grid-template-columns: repeat(4, minmax(0, 1fr));
+        justify-content: stretch;
+        gap: 18px;
+    }
+
+    .filtro-container label {
+        min-width: 0;
+    }
+
+    .filtro-container select {
+        width: 100%;
+        min-height: 48px;
+        padding: 10px 16px;
+        border: 1px solid transparent;
+        font-size: 1rem;
+    }
+
+    .filtro-container select:focus-visible,
+    .search-input-container input:focus-visible,
+    .search-button:focus-visible,
+    .btn-apply:focus-visible,
+    .job-detail-link:focus-visible {
+        outline: 2px solid #60a5fa;
+        outline-offset: 3px;
+    }
+
+    .results-section h2 {
+        display: flex;
+        align-items: baseline;
+        justify-content: space-between;
+        gap: 12px;
+    }
+
+    #results-count,
+    .job-tags {
+        color: var(--text-secondary);
+        font-size: 0.9rem;
+        font-weight: 400;
+    }
+
+    .job-listings {
+        display: grid;
+    }
+
+    .job-card {
+        gap: 24px;
+    }
+
+    .job-info {
+        max-width: 820px;
+    }
+
+    .job-detail-link {
+        color: var(--text-primary);
+        text-decoration: none;
+    }
+
+    .job-detail-link:hover {
+        color: #60a5fa;
+    }
+
+    .job-tags {
+        margin-top: 10px;
+    }
+
+    .job-action {
+        flex: 0 0 auto;
+    }
+
+    .btn-apply {
+        border: 0;
+        color: white;
+        cursor: pointer;
+    }
+
+    .btn-apply.is-applied {
+        background-color: #15803d;
+        cursor: default;
+    }
+
+    .empty-state {
+        padding: 28px 0;
+        color: var(--text-secondary);
+        text-align: center;
+    }
+
+    .visually-hidden {
+        position: absolute;
+        width: 1px;
+        height: 1px;
+        overflow: hidden;
+        clip: rect(0, 0, 0, 0);
+        white-space: nowrap;
+        clip-path: inset(50%);
+    }
+
+    @media (max-width: 768px) {
+        .filtro-container {
+            grid-template-columns: repeat(2, minmax(0, 1fr));
+        }
+
+        .job-card {
+            align-items: stretch;
+            text-align: left;
+        }
+
+        .job-action {
+            width: 100%;
+        }
+
+        .results-section h2 {
+            align-items: flex-start;
+            flex-direction: column;
+        }
+    }
+
+    @media (max-width: 480px) {
+        .navbar {
+            align-items: flex-start;
+            flex-direction: column;
+            gap: 16px;
+        }
+
+        .nav-links {
+            flex-wrap: wrap;
+            gap: 12px 18px;
+        }
+
+        .search-input-container {
+            flex-wrap: wrap;
+        }
+
+        .search-input-container input {
+            flex: 1;
+        }
+
+        .search-button {
+            width: 100%;
+        }
+
+        .filtro-container {
+            grid-template-columns: 1fr;
+        }
     }
     
     .logo {

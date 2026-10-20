@@ -1,0 +1,48 @@
+<!DOCTYPE html>
+<html lang="es">
+    <head>
+        <meta charset="UTF-8">
+        <meta name="viewport" content="width=device-width, initial-scale=1.0">
+        <meta name="description" content="Consulta los detalles de esta oportunidad laboral en DevJobs.">
+        <meta name="referrer" content="strict-origin-when-cross-origin">
+        <meta http-equiv="Content-Security-Policy" content="default-src 'self'; base-uri 'self'; object-src 'none'; script-src 'self'; style-src 'self'; img-src 'self' data:; connect-src 'self'; form-action 'self'">
+        <title>Detalle del empleo | DevJobs</title>
+        <link rel="stylesheet" href="./css/busqueda.css">
+        <link rel="stylesheet" href="./css/detalle-empleo.css">
+        <script type="module" src="./js/detalle-empleo.js"></script>
+    </head>
+    <body>
+        <!-- Navegación principal, compartida con la página de empleos. -->
+        <header class="navbar">
+            <a class="brand" href="index.html" aria-label="DevJobs, página de inicio">
+                <span class="brand-icon" aria-hidden="true">⚙</span>
+                <span>DevJobs</span>
+            </a>
+            <nav aria-label="Navegación principal">
+                <ul class="nav-links">
+                    <li><a href="index.html">Inicio</a></li>
+                    <li><a href="busqueda.html" class="active">Empleos</a></li>
+                    <li><a href="busqueda.html">Empresas</a></li>
+                    <li><a href="busqueda.html">Salarios</a></li>
+                </ul>
+            </nav>
+        </header>
+
+        <!-- JavaScript completa esta sección con el empleo elegido en la búsqueda. -->
+        <main class="job-detail-page">
+            <nav class="breadcrumbs" aria-label="Ruta de navegación">
+                <a href="busqueda.html">Empleos</a>
+                <span aria-hidden="true">›</span>
+                <span id="breadcrumb-title">Detalle del empleo</span>
+            </nav>
+
+            <section id="job-detail" class="job-detail" aria-live="polite">
+                <p class="loading-message">Cargando información del empleo...</p>
+            </section>
+        </main>
+
+        <footer class="footer">
+            <p>&copy; 2026 DevJobs. Todos los derechos reservados.</p>
+        </footer>
+    </body>
+</html>

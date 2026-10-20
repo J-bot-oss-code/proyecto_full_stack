@@ -1,10 +1,17 @@
 <!DOCTYPE html>
 <html lang="es">
     <head>
-        <meta charset="">
-        <meta name = "viewport" content="width=devise-width, initial-scale=1.0">
-        <title> DevDevJobs - Encuentra tu proximo trabajo </title>
-        <link rel="stylesheet" href="busqueda.css">
+        <meta charset="UTF-8">
+        <meta name="viewport" content="width=device-width, initial-scale=1.0">
+        <meta name="description" content="Encuentra oportunidades de trabajo en tecnología en DevJobs.">
+        <meta name="referrer" content="strict-origin-when-cross-origin">
+        <meta http-equiv="Content-Security-Policy" content="default-src 'self'; base-uri 'self'; object-src 'none'; script-src 'self'; style-src 'self'; img-src 'self' data:; connect-src 'self'; form-action 'self'">
+        <title>DevJobs - Encuentra tu próximo trabajo</title>
+        <link rel="stylesheet" href="./css/busqueda.css">
+
+        <!--defer = la forma clasica-->
+        <!--module = la forma moderna -->
+        <script type="module" src="./js/busqueda.js"></script>
 
     </head>
 
@@ -12,17 +19,17 @@
 <!--barra de navegacion-->
         <header class="navbar">
 
-            <div class="logo">
-                <img src="img.png" alt="DevJobs" class="logo-img">
-                <span class="logo-icon">⚙️</span>DevJobs
-            </div>
+            <a class="brand" href="index.html" aria-label="DevJobs, página de inicio">
+                <span class="brand-icon" aria-hidden="true">⚙</span>
+                <span>DevJobs</span>
+            </a>
 
-            <nav>
+            <nav aria-label="Navegación principal">
                 <ul class="nav-links">
-                    <li><a href="index.html" target="_self"> Inicio</a></li>
-                    <li><a href="#" class="active"> Empleos</a></li>
-                    <li><a href="#"> Empresas</a></li>
-                    <li><a href="#"> Salarios </a></li>
+                    <li><a href="index.html">Inicio</a></li>
+                    <li><a href="busqueda.html" class="active">Empleos</a></li>
+                    <li><a href="busqueda.html">Empresas</a></li>
+                    <li><a href="busqueda.html">Salarios</a></li>
                 </ul>
             </nav>
         </header>
@@ -37,119 +44,68 @@
                 <h1>Encuentra tu proximo trabajo</h1>
                 <p>Explora miles de oportunidades en el sector tecnologico. </p>
 
-                <div class="search-input-container">
+                <form class="search-input-container" id="job-search-form" role="search">
                     <span class="search-icon">🔍</span>
-                    <input type="text" placeholder="Buscar trabajos, empresas o habilidades">
-                    <button class="search-button">Buscar</button>
-                </div>
+                    <label class="visually-hidden" for="job-search">Buscar empleos</label>
+                    <input id="job-search" type="search" maxlength="120" placeholder="Buscar trabajos, empresas o habilidades">
+                    <button class="search-button" type="submit">Buscar</button>
+                </form>
 
-                
-
-                <div class="filtro-container">
-                    <select><option>Tecnologia</option></select>
-                    <select><option>Ubicacion</option></select>
-                    <select><option>Tipo de contrato</option></select>
-                    <select><option>Nivel de experiencia</option></select>
+                <!-- Cada selector se conecta con el filtrado en script.js. -->
+                <div class="filtro-container" aria-label="Filtros de empleos">
+                    <label>
+                        <span class="visually-hidden">Filtrar por tecnología</span>
+                        <select id="technology-filter" name="technology">
+                            <option value="">Tecnología</option>
+                            <option value="JavaScript">JavaScript</option>
+                            <option value="React">React</option>
+                            <option value="Node.js">Node.js</option>
+                            <option value="Python">Python</option>
+                            <option value="SQL">SQL</option>
+                            <option value="CSS">CSS</option>
+                            <option value="Ciberseguridad">Ciberseguridad</option>
+                            <option value="Gestión de proyectos">Gestión de proyectos</option>
+                            <option value="Agile">Agile</option>
+                            <option value="Redes">Redes</option>
+                        </select>
+                    </label>
+                    <label>
+                        <span class="visually-hidden">Filtrar por ubicación</span>
+                        <select id="location-filter" name="location">
+                            <option value="">Ubicación</option>
+                            <option value="Remoto">Remoto</option>
+                            <option value="Madrid">Madrid</option>
+                            <option value="Barcelona">Barcelona</option>
+                        </select>
+                    </label>
+                    <label>
+                        <span class="visually-hidden">Filtrar por tipo de contrato</span>
+                        <select id="contract-filter" name="contract">
+                            <option value="">Tipo de contrato</option>
+                            <option value="Tiempo completo">Tiempo completo</option>
+                            <option value="Contrato">Contrato</option>
+                        </select>
+                    </label>
+                    <label>
+                        <span class="visually-hidden">Filtrar por nivel de experiencia</span>
+                        <select id="experience-filter" name="experience">
+                            <option value="">Nivel de experiencia</option>
+                            <option value="Intermedio">Intermedio</option>
+                            <option value="Senior">Senior</option>
+                        </select>
+                    </label>
                 </div>
             </section>
 
             <!-- 3. SECCIÓN DE RESULTADOS DE BÚSQUEDA -->
-             <section class="resultados-busqueda">
-                <h2>Resultados de busqueda</h2>
+             <section class="resultados-busqueda results-section" aria-labelledby="results-heading">
+                <h2 id="results-heading">Resultados de búsqueda <span id="results-count" aria-live="polite"></span></h2>
 
-                <div class="job-list">
-                    <!--tarjeta de empleo-->
-                    <article class="job-card">
-                        <div class="job-info">
-                            <h3>Ingeniero de software</h3>
-                            <p class="company-location">Tech Solutions Inc. | Remoto</p>
-                            <p class="job-description">Buscamos un ingeniero de software con experiencia en 
-                                desarrollo web y conocimientos en JavaScript, React y Node.js. 
-                                El candidato ideal debe ser capaz de trabajar en equipo y tener buenas 
-                                habilidades de comunicación.</p>
-                        </div>
-                        <div class="job-action">
-                            <button class="btn-apply">Aplicar</button>
-                        </div>
-                    </article>
-                </div>
+                    <div class="job-listings" id="job-listings" aria-live="polite">
+                        <p class="loading-message">Cargando empleos...</p>
+                    </div>
 
-                <div class="job-list">
-                    <!--tarjeta de empleo-->
-                    <article class="job-card">
-                        <div class="job-info">
-                            <h3>Analista de datos</h3>
-                            <p class="company-location">Data Insights Ltd. | Madrid</p>
-                            <p class="job-description">Se busca un analista de datos con experiencia en análisis 
-                                de datos y visualización. Se valora la capacidad para trabajar con grandes 
-                                volúmenes de información y presentar hallazgos de manera clara y concisa.</p>
-                        </div>
-                        <div class="job-action">
-                            <button class="btn-apply">Aplicar</button>
-                        </div>
-                    </article>
-                </div>
-
-                <div class="job-list">
-                    <!--tarjeta de empleo-->
-                    <article class="job-card">
-                        <div class="job-info">
-                            <h3>desarrollador frontend</h3>
-                            <p class="company-location">Revolution Tech | Barcelona</p>
-                            <p class="job-description">Se busca un desarrollador frontend con experiencia en 
-                                desarrollo web y conocimientos en JavaScript, React y Node.js. 
-                                El candidato ideal debe ser capaz de trabajar en equipo y tener buenas 
-                                habilidades de comunicación.</p>
-                        </div>
-                        <div class="job-action">
-                            <button class="btn-apply">Aplicar</button>
-                        </div>
-                    </article>
-                </div>
-
-                <div class="job-list">
-                    <!--tarjeta de empleo-->
-                    <article class="job-card">
-                        <div class="job-info">
-                            <h3>Especialista en ciberseguridad</h3>
-                            <p class="company-location">SecureNet | Remoto</p>
-                            <p class="job-description">Buscamos un especialista en ciberseguridad con experiencia en 
-                                evaluación de vulnerabilidades y monitoreo de seguridad. 
-                                Certificaciones como CEH o OSCP son un plus.</p>
-                        </div>
-                        <div class="job-action">
-                            <button class="btn-apply">Aplicar</button>
-                        </div>
-                    </article>
-                </div>
-
-                <div class="job-list">
-                    <!--tarjeta de empleo-->
-                    <article class="job-card">
-                        <div class="job-info">
-                            <h3>Gerente de proyecto TI</h3>
-                            <p class="company-location">TechLead Co. | Madrid</p>
-                            <p class="job-description">Se requiere un gerente de proyecto con experiencia en 
-                                metodologías ágiles y equipos multidisciplinarios. 
-                Mínimo 5 años de experiencia en gestión de proyectos tecnológicos.</p>
-                        </div>
-                        <div class="job-action">
-                            <button class="btn-apply">Aplicar</button>
-                        </div>
-                    </article>
-                </div>
-
-                <!-- Agrega más tarjetas de empleo según sea necesario -->
-                 <!--paginacion-->
-                 <div class="pagination">
-                    <button class="page-btn">&lt;</button>
-                <button class="page-btn active">1</button>
-                <button class="page-btn">2</button>
-                <button class="page-btn">3</button>
-                <button class="page-btn">4</button>
-                <button class="page-btn">5</button>
-                <button class="page-btn">&gt;</button>
-                </div>
+                <p id="empty-state" class="empty-state" hidden>No encontramos empleos con esos criterios. Prueba otros filtros.</p>
              </section>
 
         </main>
