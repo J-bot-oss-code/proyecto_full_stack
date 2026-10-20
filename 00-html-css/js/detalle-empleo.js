@@ -1,4 +1,5 @@
 import { loadJobs } from "./jobs-data.js"
+import "./avatar.js"
 
 // Lee el identificador del empleo desde la URL.
 const jobId = new URLSearchParams(window.location.search).get("id")

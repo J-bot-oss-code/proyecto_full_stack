@@ -5,9 +5,10 @@
         <meta name="viewport" content="width=device-width, initial-scale=1.0">
         <meta name="description" content="Encuentra oportunidades de trabajo en tecnología en DevJobs.">
         <meta name="referrer" content="strict-origin-when-cross-origin">
-        <meta http-equiv="Content-Security-Policy" content="default-src 'self'; base-uri 'self'; object-src 'none'; script-src 'self'; style-src 'self'; img-src 'self' data:; connect-src 'self'; form-action 'self'">
+        <meta http-equiv="Content-Security-Policy" content="default-src 'self'; base-uri 'self'; object-src 'none'; script-src 'self'; style-src 'self'; img-src 'self' data: https:; connect-src 'self' https://api.github.com; form-action 'self'">
         <title>DevJobs - Encuentra tu próximo trabajo</title>
         <link rel="stylesheet" href="./css/busqueda.css">
+        <link rel="stylesheet" href="./css/profile.css">
 
         <!--defer = la forma clasica-->
         <!--module = la forma moderna -->
@@ -32,6 +33,45 @@
                     <li><a href="busqueda.html">Salarios</a></li>
                 </ul>
             </nav>
+            <details class="profile-menu">
+                <summary class="profile-trigger" aria-label="Abrir opciones del avatar">
+                    <span class="avatar-fallback" data-avatar-fallback aria-hidden="true">JD</span>
+                    <img class="profile-avatar" data-avatar-image alt="" hidden>
+                    <span class="profile-trigger-label">Mi perfil</span>
+                </summary>
+                <form class="profile-panel" data-avatar-form>
+                    <h2>Personaliza tu avatar</h2>
+                    <label for="profile-name">Nombre para mostrar</label>
+                    <input id="profile-name" name="profileName" type="text" maxlength="40" autocomplete="nickname" value="Mi perfil">
+
+                    <label for="avatar-source">Fuente del avatar</label>
+                    <select id="avatar-source" name="avatarSource">
+                        <option value="github">GitHub</option>
+                        <option value="url">URL de imagen HTTPS</option>
+                        <option value="upload">Subir imagen</option>
+                    </select>
+
+                    <div data-avatar-source="github">
+                        <label for="github-username">Usuario público de GitHub</label>
+                        <input id="github-username" name="githubUsername" type="text" maxlength="39" autocomplete="off" placeholder="octocat">
+                    </div>
+                    <div data-avatar-source="url" hidden>
+                        <label for="avatar-url">URL de imagen (HTTPS)</label>
+                        <input id="avatar-url" name="avatarUrl" type="url" maxlength="2048" autocomplete="url" placeholder="https://ejemplo.com/avatar.jpg">
+                    </div>
+                    <div data-avatar-source="upload" hidden>
+                        <label for="avatar-file">Imagen PNG, JPEG o WebP (máx. 1.5 MB)</label>
+                        <input id="avatar-file" name="avatarFile" type="file" accept="image/png,image/jpeg,image/webp">
+                    </div>
+
+                    <p class="profile-note">Se guarda solo en este navegador. GitHub usa el avatar público; no inicia sesión.</p>
+                    <p class="profile-status" data-avatar-status role="status" aria-live="polite"></p>
+                    <div class="profile-actions">
+                        <button type="submit">Guardar avatar</button>
+                        <button type="button" data-avatar-reset>Restablecer</button>
+                    </div>
+                </form>
+            </details>
         </header>
 
         

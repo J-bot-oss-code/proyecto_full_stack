@@ -1,4 +1,5 @@
 import { loadJobs as fetchJobs } from "./jobs-data.js"
+import "./avatar.js"
 
 // Guardamos los elementos de la página para leer filtros y actualizar resultados.
 const jobListSection = document.querySelector("#job-listings")

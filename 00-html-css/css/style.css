@@ -170,6 +170,17 @@ body > header div {
     flex-wrap: wrap;
 }
 
+.header-actions > a:last-of-type {
+    background-color: var(--primary);
+    color: #fff;
+    box-shadow: var(--shadow-primary);
+}
+
+.header-actions > a:last-of-type:hover {
+    background-color: var(--primary-hover);
+    transform: translateY(-1px);
+}
+
 header div a {
     display: inline-block;
     font-size: 0.9rem;

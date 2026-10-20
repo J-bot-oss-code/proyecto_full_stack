@@ -37,3 +37,7 @@ node .\javascript-js\15-classes.js
 Abre `00-html-css\index.html` con la extensión **Live Server** de VS Code. La sección de empleos carga `data\data.json` usando `fetch`, por lo que debe servirse desde un servidor local y no abrirse directamente como archivo.
 
 La web está hecha con HTML, CSS y JavaScript nativo. La organización actual no usa React.
+
+## Avatar de perfil
+
+El menú **Mi perfil** permite usar el avatar público de GitHub, una imagen alojada en una URL HTTPS o un archivo PNG, JPEG o WebP. El nombre y el avatar se guardan en `localStorage` de ese navegador y no se sincronizan entre dispositivos. La opción de GitHub muestra una imagen pública; no inicia sesión ni reemplaza una integración OAuth con backend.
