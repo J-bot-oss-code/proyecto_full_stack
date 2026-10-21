@@ -397,6 +397,7 @@ article svg {
     padding: 12px; /* ANTES 16px con 3rem = icono diminuto */
     margin-bottom: 1rem;
     color: var(--primary-light);
+    stroke: var(--primary-light);
     background-color: var(--primary-soft);
     border-radius: 50%;
     display: block;

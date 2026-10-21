@@ -28,6 +28,12 @@ if (
 
 let jobs = []
 
+// Si la búsqueda llega desde inicio.html, coloca el término en el campo de búsqueda.
+const initialSearch = new URLSearchParams(window.location.search).get("q")
+if (initialSearch) {
+    searchInput.value = initialSearch.trim().slice(0, 120)
+}
+
 // Normalizamos texto para que las búsquedas ignoren mayúsculas y tildes.
 function normalizeText(value) {
     return value
