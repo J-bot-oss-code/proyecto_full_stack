@@ -1,0 +1,242 @@
+[
+    {
+        "id": "software-senior",
+        "title": "Ingeniero de Software Senior",
+        "company": "Tech Solutions Inc.",
+        "location": "Remoto",
+        "technology": "JavaScript",
+        "technologies": ["JavaScript", "React", "Node.js"],
+        "contract": "Tiempo completo",
+        "experience": "Senior",
+        "description": "Buscamos un Ingeniero de Software Senior para diseñar y desarrollar aplicaciones web escalables junto a un equipo remoto.",
+        "responsibilities": [
+            "Diseñar, desarrollar y mantener aplicaciones web utilizando tecnologías modernas.",
+            "Colaborar con los equipos de producto y diseño para entregar nuevas funciones.",
+            "Escribir código limpio, eficiente y bien documentado.",
+            "Revisar código y compartir comentarios constructivos con el equipo."
+        ],
+        "requirements": [
+            "Formación en informática o experiencia equivalente.",
+            "Mínimo de 5 años de experiencia en desarrollo de software.",
+            "Experiencia con JavaScript y frameworks como React.",
+            "Familiaridad con metodologías ágiles y Git."
+        ],
+        "aboutCompany": "Tech Solutions Inc. crea soluciones de software para distintas industrias y promueve un entorno de trabajo colaborativo e inclusivo."
+    },
+    {
+        "id": "data-analyst",
+        "title": "Analista de Datos",
+        "company": "Data Insights Ltd.",
+        "location": "Madrid",
+        "technology": "Python",
+        "technologies": ["Python", "SQL"],
+        "contract": "Tiempo completo",
+        "experience": "Intermedio",
+        "description": "Analiza datos, crea informes y comparte hallazgos que ayuden a nuestros equipos a tomar mejores decisiones.",
+        "responsibilities": [
+            "Analizar y limpiar conjuntos de datos de distintas fuentes.",
+            "Crear informes y visualizaciones para compartir hallazgos.",
+            "Colaborar con los equipos de producto y negocio.",
+            "Documentar consultas, métricas y procesos de análisis."
+        ],
+        "requirements": [
+            "Experiencia trabajando con Python y SQL.",
+            "Conocimientos de visualización de datos.",
+            "Capacidad para explicar resultados técnicos de forma clara.",
+            "Atención al detalle y pensamiento analítico."
+        ],
+        "aboutCompany": "Data Insights Ltd. ayuda a empresas a aprovechar sus datos mediante análisis, herramientas de visualización y asesoría especializada."
+    },
+    {
+        "id": "frontend-developer",
+        "title": "Desarrollador Frontend",
+        "company": "Revolution Tech",
+        "location": "Barcelona",
+        "technology": "React",
+        "technologies": ["JavaScript", "React", "CSS"],
+        "contract": "Tiempo completo",
+        "experience": "Intermedio",
+        "description": "Construye interfaces web rápidas, accesibles y adaptables en colaboración con diseñadores y desarrolladores.",
+        "responsibilities": [
+            "Desarrollar interfaces web adaptables a distintos dispositivos.",
+            "Convertir diseños en componentes reutilizables.",
+            "Colaborar con diseño y backend para entregar nuevas funciones.",
+            "Probar y mejorar la accesibilidad y el rendimiento."
+        ],
+        "requirements": [
+            "Experiencia con JavaScript, HTML y CSS.",
+            "Conocimientos de React y componentes reutilizables.",
+            "Familiaridad con Git y trabajo en equipo.",
+            "Interés por la accesibilidad y la experiencia de usuario."
+        ],
+        "aboutCompany": "Revolution Tech crea productos digitales para empresas que buscan modernizar sus servicios y ofrecer mejores experiencias a sus clientes."
+    },
+    {
+        "id": "cybersecurity-specialist",
+        "title": "Especialista en Ciberseguridad",
+        "company": "SecureNet",
+        "location": "Remoto",
+        "technology": "Ciberseguridad",
+        "technologies": ["Ciberseguridad", "Redes"],
+        "contract": "Tiempo completo",
+        "experience": "Senior",
+        "description": "Ayuda a proteger sistemas, evaluar riesgos y fortalecer las prácticas de seguridad de la organización.",
+        "responsibilities": [
+            "Monitorear alertas y analizar posibles incidentes de seguridad.",
+            "Evaluar configuraciones y recomendar mejoras defensivas.",
+            "Colaborar en la respuesta y documentación de incidentes.",
+            "Promover buenas prácticas de seguridad entre los equipos."
+        ],
+        "requirements": [
+            "Experiencia en seguridad de sistemas y redes.",
+            "Conocimientos de gestión de vulnerabilidades y respuesta a incidentes.",
+            "Capacidad para documentar hallazgos y comunicar riesgos.",
+            "Certificaciones de seguridad son valoradas, pero no obligatorias."
+        ],
+        "aboutCompany": "SecureNet ayuda a organizaciones a proteger su infraestructura digital y a desarrollar programas de seguridad sólidos."
+    },
+    {
+        "id": "it-project-manager",
+        "title": "Gerente de Proyecto TI",
+        "company": "TechLead Co.",
+        "location": "Madrid",
+        "technology": "Gestión de proyectos",
+        "technologies": ["Gestión de proyectos", "Agile"],
+        "contract": "Contrato",
+        "experience": "Senior",
+        "description": "Lidera proyectos tecnológicos, coordina equipos multidisciplinarios y da seguimiento a objetivos y entregas.",
+        "responsibilities": [
+            "Planificar objetivos, alcance, calendario y recursos del proyecto.",
+            "Coordinar equipos y dar seguimiento a tareas y dependencias.",
+            "Identificar riesgos y comunicar avances a las partes interesadas.",
+            "Facilitar reuniones y procesos de mejora continua."
+        ],
+        "requirements": [
+            "Experiencia gestionando proyectos tecnológicos.",
+            "Conocimiento de metodologías ágiles y herramientas de planificación.",
+            "Habilidades de comunicación y organización.",
+            "Capacidad para coordinar equipos multidisciplinarios."
+        ],
+        "aboutCompany": "TechLead Co. acompaña a sus clientes en la planificación y entrega de proyectos tecnológicos con equipos colaborativos."
+    },
+    {
+        "id": "backend-developer",
+        "title": "Desarrollador Backend",
+        "company": "Cloud Systems",
+        "location": "Remoto",
+        "technology": "Node.js",
+        "technologies": ["Node.js", "JavaScript", "SQL"],
+        "contract": "Tiempo completo",
+        "experience": "Intermedio",
+        "description": "Desarrolla servicios y APIs confiables para una plataforma en la nube utilizada por miles de clientes.",
+        "responsibilities": [
+            "Crear y mantener APIs y servicios backend.",
+            "Diseñar consultas y modelos de datos eficientes.",
+            "Escribir pruebas y documentar el código.",
+            "Colaborar con los equipos frontend y de producto."
+        ],
+        "requirements": [
+            "Experiencia con Node.js y JavaScript.",
+            "Conocimientos de SQL y diseño de APIs.",
+            "Familiaridad con pruebas automatizadas y Git.",
+            "Capacidad para colaborar en un equipo multidisciplinario."
+        ],
+        "aboutCompany": "Cloud Systems desarrolla herramientas y servicios en la nube para ayudar a empresas a gestionar sus operaciones digitales."
+    },
+    {
+        "id": "python-developer",
+        "title": "Desarrollador Python",
+        "company": "Nube Digital",
+        "location": "Madrid",
+        "technology": "Python",
+        "technologies": ["Python", "SQL"],
+        "contract": "Contrato",
+        "experience": "Senior",
+        "description": "Construye servicios y automatizaciones en Python para procesar datos y mejorar los productos de nuestros clientes.",
+        "responsibilities": [
+            "Desarrollar y mantener aplicaciones con Python.",
+            "Integrar servicios mediante APIs.",
+            "Mejorar el rendimiento y la calidad del código.",
+            "Participar en revisiones técnicas y planificación."
+        ],
+        "requirements": [
+            "Experiencia profesional con Python.",
+            "Conocimientos de SQL y bases de datos.",
+            "Experiencia creando o consumiendo APIs.",
+            "Buenas prácticas de pruebas y control de versiones."
+        ],
+        "aboutCompany": "Nube Digital ofrece soluciones tecnológicas y servicios de desarrollo para organizaciones en crecimiento."
+    },
+    {
+        "id": "ux-ui-designer",
+        "title": "Diseñador UI",
+        "company": "Pixel Studio",
+        "location": "Barcelona",
+        "technology": "CSS",
+        "technologies": ["CSS", "JavaScript"],
+        "contract": "Tiempo completo",
+        "experience": "Intermedio",
+        "description": "Diseña interfaces claras y accesibles para productos web, trabajando en conjunto con diseño y desarrollo.",
+        "responsibilities": [
+            "Crear y mantener componentes y estilos de interfaz.",
+            "Colaborar con diseño para implementar prototipos.",
+            "Revisar la experiencia en distintos tamaños de pantalla.",
+            "Cuidar la accesibilidad y consistencia visual."
+        ],
+        "requirements": [
+            "Conocimientos sólidos de CSS y HTML.",
+            "Familiaridad con JavaScript y diseño adaptable.",
+            "Atención al detalle y comprensión de accesibilidad web.",
+            "Capacidad para colaborar con diseñadores y desarrolladores."
+        ],
+        "aboutCompany": "Pixel Studio diseña experiencias digitales para marcas y productos que buscan interfaces accesibles y fáciles de usar."
+    },
+    {
+        "id": "security-analyst",
+        "title": "Analista de Seguridad Informática",
+        "company": "SafeWeb",
+        "location": "Madrid",
+        "technology": "Ciberseguridad",
+        "technologies": ["Ciberseguridad", "Redes"],
+        "contract": "Contrato",
+        "experience": "Intermedio",
+        "description": "Apoya al equipo de seguridad en la supervisión de sistemas, análisis de alertas y aplicación de medidas defensivas.",
+        "responsibilities": [
+            "Revisar alertas y registrar eventos de seguridad.",
+            "Ayudar a investigar incidentes y documentar resultados.",
+            "Colaborar en la aplicación de controles de seguridad.",
+            "Preparar reportes y recomendaciones para los equipos."
+        ],
+        "requirements": [
+            "Conocimientos básicos de redes y seguridad informática.",
+            "Interés en monitoreo y respuesta a incidentes.",
+            "Habilidad para documentar procesos y hallazgos.",
+            "Disposición para aprender herramientas de seguridad."
+        ],
+        "aboutCompany": "SafeWeb ayuda a sus clientes a proteger sus servicios digitales mediante asesoría y prácticas de seguridad preventivas."
+    },
+    {
+        "id": "agile-coach",
+        "title": "Agile Coach",
+        "company": "Impulso Tech",
+        "location": "Remoto",
+        "technology": "Gestión de proyectos",
+        "technologies": ["Gestión de proyectos", "Agile"],
+        "contract": "Tiempo completo",
+        "experience": "Senior",
+        "description": "Acompaña a equipos de producto y tecnología para mejorar sus procesos de colaboración y entrega continua.",
+        "responsibilities": [
+            "Facilitar ceremonias y sesiones de mejora continua.",
+            "Acompañar a los equipos en la adopción de prácticas ágiles.",
+            "Identificar impedimentos y ayudar a resolverlos.",
+            "Promover una comunicación efectiva entre áreas."
+        ],
+        "requirements": [
+            "Experiencia acompañando equipos con metodologías ágiles.",
+            "Habilidades de facilitación y comunicación.",
+            "Conocimiento de herramientas de gestión de proyectos.",
+            "Capacidad para impulsar mejoras de forma colaborativa."
+        ],
+        "aboutCompany": "Impulso Tech trabaja con organizaciones para mejorar la colaboración entre equipos y la entrega de productos digitales."
+    }
+]
