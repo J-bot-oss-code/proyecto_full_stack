@@ -13,6 +13,10 @@
   backdrop-filter: blur(16px);
 }
 
+.navbar > nav {
+  margin-left: auto;
+}
+
 .brand {
   display: inline-flex;
   align-items: center;
@@ -57,6 +61,49 @@
 .nav-links a.active {
   background: rgba(148, 163, 184, 0.12);
   color: var(--text-primary);
+}
+
+.navbar-auth {
+  display: flex;
+  align-items: center;
+  gap: 8px;
+}
+
+.navbar-auth a {
+  display: inline-flex;
+  min-height: 40px;
+  align-items: center;
+  justify-content: center;
+  padding: 0 12px;
+  border: 1px solid transparent;
+  border-radius: 9px;
+  color: var(--text-secondary);
+  font-size: 0.85rem;
+  font-weight: 650;
+  text-decoration: none;
+  white-space: nowrap;
+}
+
+.navbar-auth a:hover,
+.navbar-auth a.active {
+  color: var(--text-primary);
+}
+
+.navbar-auth .navbar-register {
+  border-color: var(--accent-blue);
+  background: var(--accent-blue);
+  color: #fff;
+}
+
+.navbar-auth .navbar-register:hover,
+.navbar-auth .navbar-register.active {
+  background: #2563eb;
+}
+
+.navbar-auth a:focus-visible,
+.profile-dashboard-link:focus-visible {
+  outline: 2px solid #60a5fa;
+  outline-offset: 3px;
 }
 
 .home-page {
@@ -594,6 +641,21 @@
   z-index: 20;
 }
 
+.profile-dashboard-link {
+  display: block;
+  padding: 10px 12px;
+  border: 1px solid var(--border-color);
+  border-radius: 9px;
+  color: #bfdbfe;
+  font-size: 0.88rem;
+  font-weight: 650;
+  text-decoration: none;
+}
+
+.profile-dashboard-link:hover {
+  background: rgba(59, 130, 246, 0.1);
+}
+
 .profile-trigger {
   display: inline-flex;
   min-height: 44px;
@@ -777,8 +839,24 @@
 
 @media (max-width: 760px) {
   .navbar {
+    flex-wrap: wrap;
     gap: 12px;
     padding-inline: 16px;
+  }
+
+  .navbar > nav {
+    order: 3;
+    width: 100%;
+    margin: 0;
+  }
+
+  .nav-links {
+    flex-wrap: wrap;
+    justify-content: center;
+  }
+
+  .navbar-auth {
+    margin-left: auto;
   }
 
   .filtro-container {
@@ -819,8 +897,19 @@
   }
 
   .nav-links a {
-    padding-inline: 9px;
-    font-size: 0.85rem;
+    min-height: 36px;
+    padding-inline: 8px;
+    font-size: 0.78rem;
+  }
+
+  .navbar-auth {
+    gap: 3px;
+  }
+
+  .navbar-auth a {
+    min-height: 36px;
+    padding-inline: 8px;
+    font-size: 0.74rem;
   }
 
   .profile-trigger-label {
@@ -829,7 +918,7 @@
 
   .profile-panel {
     position: fixed;
-    top: 76px;
+    top: 116px;
     right: 16px;
   }
 

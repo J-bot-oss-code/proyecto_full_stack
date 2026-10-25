@@ -1,3 +1,4 @@
+import { Link } from 'react-router-dom'
 import './RegisterPage.css'
 
 export default function RegisterPage() {
@@ -67,7 +68,7 @@ export default function RegisterPage() {
           <button type="submit">Crear cuenta</button>
         </form>
         <p className="register-login">
-          ¿Ya tienes cuenta? <a href="/login">Iniciar sesión</a>
+          ¿Ya tienes cuenta? <Link to="/login">Iniciar sesión</Link>
         </p>
       </section>
     </main>

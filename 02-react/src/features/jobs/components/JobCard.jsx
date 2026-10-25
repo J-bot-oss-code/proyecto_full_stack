@@ -1,13 +1,14 @@
 import { useState } from 'react'
+import { Link } from 'react-router-dom'
 
-export default function JobCard({ job, navigate }) {
+export default function JobCard({ job }) {
   const [isApplied, setIsApplied] = useState(false)
 
   return (
     <article className="job-card">
       <div className="job-info">
         <h3>
-          <a href={`/jobs/${encodeURIComponent(job.id)}`} onClick={navigate}>{job.title}</a>
+          <Link to={`/jobs/${encodeURIComponent(job.id)}`}>{job.title}</Link>
         </h3>
         <p className="company-location">{job.company} · {job.location} · {job.experience}</p>
         <p className="job-description">{job.description}</p>

@@ -1,4 +1,5 @@
 import { useState } from 'react'
+import { Link } from 'react-router-dom'
 
 function JobListSection({ title, items }) {
   return (
@@ -11,7 +12,7 @@ function JobListSection({ title, items }) {
   )
 }
 
-export default function JobDetailPage({ job, loading, error, navigate }) {
+export default function JobDetailPage({ job, loading, error }) {
   const [isApplied, setIsApplied] = useState(false)
 
   if (loading) {
@@ -24,7 +25,7 @@ export default function JobDetailPage({ job, loading, error, navigate }) {
         <p className="state-message is-error" role="alert">
           {error ?? 'No encontramos ese empleo. Vuelve a la búsqueda para elegir otro.'}
         </p>
-        <a className="back-link" href="/jobs" onClick={navigate}>Volver a empleos</a>
+        <Link className="back-link" to="/jobs">Volver a empleos</Link>
       </main>
     )
   }
@@ -39,7 +40,7 @@ export default function JobDetailPage({ job, loading, error, navigate }) {
   return (
     <main className="job-detail-page">
       <nav className="breadcrumbs" aria-label="Ruta de navegación">
-        <a href="/jobs" onClick={navigate}>Empleos</a>
+        <Link to="/jobs">Empleos</Link>
         <span aria-hidden="true">›</span>
         <span>{job.title}</span>
       </nav>

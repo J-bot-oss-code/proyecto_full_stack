@@ -1,4 +1,5 @@
 import { useRef, useState } from 'react'
+import { Link } from 'react-router-dom'
 import { getInitials, resolveAvatarSource, validateAvatarSource } from '../services/avatarService.js'
 import { getSavedProfile, removeSavedProfile, saveProfile } from '../services/profileStorage.js'
 
@@ -13,6 +14,7 @@ export default function ProfileMenu() {
   const [statusIsError, setStatusIsError] = useState(false)
   const [isSaving, setIsSaving] = useState(false)
   const [imageFailed, setImageFailed] = useState(false)
+  const profileMenu = useRef(null)
   const fileInput = useRef(null)
   const displayName = profile?.name ?? 'Mi perfil'
   const hasAvatar = Boolean(profile?.avatarSrc) && !imageFailed
@@ -73,7 +75,7 @@ export default function ProfileMenu() {
   }
 
   return (
-    <details className="profile-menu">
+    <details className="profile-menu" ref={profileMenu}>
       <summary className="profile-trigger" aria-label={`Perfil de ${displayName}`}>
         {!hasAvatar && (
           <span className="avatar-fallback" aria-hidden="true">{getInitials(displayName)}</span>
@@ -91,6 +93,15 @@ export default function ProfileMenu() {
         <span className="profile-trigger-label">{displayName}</span>
       </summary>
       <form className="profile-panel" onSubmit={handleSubmit}>
+        <Link
+          className="profile-dashboard-link"
+          to="/profile"
+          onClick={() => {
+            if (profileMenu.current) profileMenu.current.open = false
+          }}
+        >
+          Ver perfil profesional
+        </Link>
         <h2>Personaliza tu avatar</h2>
         <label htmlFor="profile-name">Nombre para mostrar</label>
         <input

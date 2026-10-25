@@ -63,20 +63,24 @@ Para validar la compilación de producción:
 npm run build
 ```
 
-La app incluye la página de inicio, búsqueda con filtros, detalle de empleos, acciones para postular y personalización del avatar. Los datos de empleos se sirven desde `02-react\public\data\data.json`.
+La app incluye inicio, búsqueda y detalle de empleos, un directorio de empresas, referencias salariales ilustrativas, registro e inicio de sesión visuales y un perfil profesional de demostración con espacios para CV, proyectos y certificados. Los datos de empleos se sirven desde `02-react\public\data\data.json`. El registro, el inicio de sesión, la edición del perfil y la carga de CV aún no tienen lógica de backend.
 
 ### Arquitectura de React
 
 La aplicación usa una arquitectura por funcionalidades con separación ligera por capas:
 
-- `src/app/`: composición de la aplicación, layout y navegación del navegador.
+- `src/app/`: composición de la aplicación, layout y rutas con React Router.
 - `src/features/home/`: interfaz y comportamiento de la página de inicio.
 - `src/features/jobs/`: páginas y componentes de empleos, filtrado puro de dominio, carga y validación de datos.
-- `src/features/profile/`: menú de perfil, validación de avatares y persistencia local.
+- `src/features/companies/` y `src/features/salaries/`: directorio de empresas y referencias salariales de demostración.
+- `src/features/auth/`: formularios visuales de registro e inicio de sesión, sin autenticación real.
+- `src/features/profile/`: menú de perfil, página profesional, validación de avatares y persistencia local del avatar.
 - `src/shared/`: componentes reutilizables entre funcionalidades.
 - `src/styles/` y `src/index.css`: estilos de la aplicación y estilos base.
 
-Las páginas coordinan sus componentes; los componentes manejan presentación e interacción local; los hooks reúnen estado y ciclo de vida; los servicios/repositorios aíslan el acceso a APIs y almacenamiento. El hook de empleos recibe el repositorio como función, lo que permite sustituirlo por un doble de prueba sin cambiar la interfaz.
+Las páginas coordinan sus componentes; los componentes manejan presentación e interacción local; los hooks reúnen estado y ciclo de vida; los servicios/repositorios aíslan el acceso a APIs y almacenamiento. El hook de empleos recibe el repositorio como función, lo que permite sustituirlo por un doble de prueba sin cambiar la interfaz. `usePagination` encapsula el estado y el cálculo de la página visible, reiniciándose al cambiar la consulta o los filtros.
+
+La navegación SPA usa `BrowserRouter`, `Routes`, `Route`, `Link`, `NavLink` y hooks de React Router. Los enlaces internos actualizan la ruta sin solicitar de nuevo el documento HTML; React Router sincroniza el historial Atrás/Adelante con las vistas. En producción, el servidor debe devolver `index.html` para las rutas de la aplicación, por ejemplo `/jobs/software-senior`.
 
 La separación favorece los principios SOLID donde resultan útiles en esta app: responsabilidad única al separar vistas, dominio y persistencia; extensión de filtros mediante configuración y reglas de dominio; contratos de datos validados para las vistas; componentes con props pequeñas; e inversión de dependencias en el límite del repositorio. No se introduce una jerarquía artificial de clases: el dominio se expresa con funciones puras y módulos JavaScript.
 

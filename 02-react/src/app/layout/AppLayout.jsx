@@ -1,12 +1,13 @@
+import { Outlet } from 'react-router-dom'
 import Footer from '../../shared/components/Footer.jsx'
 import Header from '../../shared/components/Header.jsx'
 
-export default function AppLayout({ path, navigate, children }) {
+export default function AppLayout() {
   return (
     <>
-      <Header path={path} navigate={navigate} />
-      {children}
-      <Footer navigate={navigate} />
+      <Header />
+      <Outlet />
+      <Footer />
     </>
   )
 }

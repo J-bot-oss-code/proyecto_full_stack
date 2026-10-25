@@ -1,3 +1,4 @@
+import { useNavigate } from 'react-router-dom'
 import devjobsImage from '../../../assets/devjobs.png'
 
 const benefits = [
@@ -30,7 +31,9 @@ const benefits = [
   },
 ]
 
-export default function HomePage({ navigate }) {
+export default function HomePage() {
+  const navigate = useNavigate()
+
   function handleSearch(event) {
     event.preventDefault()
     const form = new FormData(event.currentTarget)

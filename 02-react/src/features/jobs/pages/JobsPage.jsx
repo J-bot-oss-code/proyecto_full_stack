@@ -1,4 +1,5 @@
 import { useState } from 'react'
+import { usePagination } from '../hooks/usePagination.js'
 import JobCard from '../components/JobCard.jsx'
 import JobFilters from '../components/JobFilters.jsx'
 import JobsPagination from '../components/pagination/JobsPagination.jsx'
@@ -6,9 +7,8 @@ import { filterJobs } from '../domain/filterJobs.js'
 
 const JOBS_PER_PAGE = 6
 
-export default function JobsPage({ jobs, loading, error, initialQuery, navigate }) {
+export default function JobsPage({ jobs, loading, error, initialQuery }) {
   const [query, setQuery] = useState(initialQuery)
-  const [currentPage, setCurrentPage] = useState(1)
   const [filters, setFilters] = useState({
     technology: '',
     location: '',
@@ -16,18 +16,22 @@ export default function JobsPage({ jobs, loading, error, initialQuery, navigate 
     experience: '',
   })
   const matchingJobs = filterJobs(jobs, query, filters)
-  const totalPages = Math.ceil(matchingJobs.length / JOBS_PER_PAGE)
-  const firstJobIndex = (currentPage - 1) * JOBS_PER_PAGE
-  const visibleJobs = matchingJobs.slice(firstJobIndex, firstJobIndex + JOBS_PER_PAGE)
+  const {
+    currentPage,
+    totalPages,
+    visibleItems: visibleJobs,
+    goToPage,
+    resetPage,
+  } = usePagination(matchingJobs, JOBS_PER_PAGE)
 
   function updateFilter(name, value) {
     setFilters((current) => ({ ...current, [name]: value }))
-    setCurrentPage(1)
+    resetPage()
   }
 
   function updateQuery(value) {
     setQuery(value)
-    setCurrentPage(1)
+    resetPage()
   }
 
   return (
@@ -72,14 +76,14 @@ export default function JobsPage({ jobs, loading, error, initialQuery, navigate 
         )}
         <div className="job-listings" aria-live="polite">
           {!loading && !error && visibleJobs.map((job) => (
-            <JobCard key={job.id} job={job} navigate={navigate} />
+            <JobCard key={job.id} job={job} />
           ))}
         </div>
         {!loading && !error && (
           <JobsPagination
             currentPage={currentPage}
             totalPages={totalPages}
-            onPageChange={setCurrentPage}
+            onPageChange={goToPage}
           />
         )}
       </section>
