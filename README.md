@@ -29,6 +29,11 @@ javascript-js/
     styles/
   public/data/
   package.json
+
+backend/
+  src/
+    server.js
+  package.json
 ```
 
 Las lecciones numeradas de `javascript-js` siguen en orden de aprendizaje. Los archivos `*-exercises.js` son espacios de práctica y pueden estar vacíos.
@@ -64,6 +69,18 @@ npm run build
 ```
 
 La app incluye inicio, búsqueda y detalle de empleos, un directorio de empresas, referencias salariales ilustrativas, registro e inicio de sesión visuales y un perfil profesional de demostración con espacios para CV, proyectos y certificados. Los datos de empleos se sirven desde `02-react\public\data\data.json`. El registro, el inicio de sesión, la edición del perfil y la carga de CV aún no tienen lógica de backend.
+
+### Iniciar el backend
+
+El backend inicial usa Node.js y Express. Desde la raíz del repositorio:
+
+```powershell
+cd .\backend
+npm install
+npm run dev
+```
+
+El servidor inicia en `http://localhost:3000`; comprueba que está activo en `http://localhost:3000/api/health`. Por ahora solo ofrece una ruta de salud: la conexión con la base de datos y la lógica de empleos se agregarán en los siguientes pasos.
 
 ### Arquitectura de React
 
