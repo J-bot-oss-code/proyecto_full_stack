@@ -14,9 +14,9 @@ export function useJobs(jobRepository = getJobs) {
         if (isCurrent) setJobs(loadedJobs)
       })
       .catch((cause) => {
-        console.error('No se pudieron cargar los empleos desde data.json.', cause)
+        console.error('No se pudieron cargar los empleos desde la API.', cause)
         if (isCurrent) {
-          setError('No se pudieron cargar los empleos. Comprueba data.json y vuelve a intentarlo.')
+          setError('No se pudieron cargar los empleos. Comprueba la conexión con la API y vuelve a intentarlo.')
         }
       })
       .finally(() => {
