@@ -66,4 +66,38 @@ export const jobModel = {
     jobs.splice(index, 1)
     return true
   },
+
+  reset() {
+    jobs.length = 0
+    jobs.push(
+      {
+        id: '1',
+        title: 'Desarrollador Frontend',
+        company: 'Tech Solutions',
+        location: 'Remoto',
+        technology: 'React',
+        technologies: ['React', 'JavaScript', 'CSS'],
+        contract: 'Tiempo completo',
+        experience: 'Intermedio',
+        description: 'Desarrollo de interfaces web modernas.',
+        responsibilities: ['Crear componentes reutilizables', 'Colaborar con diseño UX'],
+        requirements: ['React', 'JavaScript', 'HTML/CSS'],
+        aboutCompany: 'Empresa líder en tecnología.',
+      },
+      {
+        id: '2',
+        title: 'Desarrollador Backend',
+        company: 'Data Corp',
+        location: 'Presencial',
+        technology: 'Node.js',
+        technologies: ['Node.js', 'Express', 'PostgreSQL'],
+        contract: 'Medio tiempo',
+        experience: 'Senior',
+        description: 'Construcción de APIs y servicios backend.',
+        responsibilities: ['Diseñar APIs REST', 'Mantener bases de datos'],
+        requirements: ['Node.js', 'SQL', 'Git'],
+        aboutCompany: 'Especialistas en datos.',
+      }
+    )
+  },
 }
